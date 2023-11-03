@@ -1,9 +1,7 @@
 import Link from "next/link";
 import React from "react";
 
-type Props = {};
-
-const BadgeLabel = (props: Props) => {
+const BadgeLabel = () => {
   return (
     <div className="flex justify-center">
       <Link

@@ -6,9 +6,7 @@ import {
 import React from "react";
 import IconCard from "./IconCard";
 
-type Props = {};
-
-const IconSection = (props: Props) => {
+const IconSection = () => {
   return (
     <section className="relative mx-auto mt-16 max-w-[85rem] rounded-md bg-slate-900/30 px-8 py-10 backdrop-blur-md sm:px-6 lg:px-20 lg:py-14">
       <div className="flex flex-col items-center text-center">

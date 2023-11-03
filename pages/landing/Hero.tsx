@@ -2,9 +2,7 @@ import Link from "next/link";
 import React from "react";
 import ParticlesBackground from "./Particles";
 
-type Props = {};
-
-const Hero = (props: Props) => {
+const Hero = () => {
   return (
     <section className="relative">
       <div className="bg-slate-950">

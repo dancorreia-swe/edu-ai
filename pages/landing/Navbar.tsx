@@ -3,9 +3,7 @@
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
-type Props = {};
-
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const [top, setTop] = useState<boolean>(true);
 
   // detect whether user has scrolled the page down by 10px
