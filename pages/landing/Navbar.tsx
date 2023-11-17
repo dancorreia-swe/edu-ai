@@ -77,11 +77,11 @@ const Navbar = () => {
               href="#"
               aria-current="page"
             >
-              Landing
+              Home
             </a>
             <a
               className="font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 sm:py-6"
-              href="#"
+              href="#SectionWork"
             >
               Work
             </a>
