@@ -72,25 +72,26 @@ const Navbar = () => {
           className="hs-collapse hidden grow basis-full overflow-hidden transition-all duration-300 sm:block"
         >
           <div className="mt-5 flex flex-col gap-x-0 gap-y-4 sm:mt-0 sm:flex-row sm:items-center sm:justify-end sm:gap-x-7 sm:gap-y-0 sm:pl-7">
-            <a
+            <Link
+              scroll={false}
               className="font-medium text-blue-600 dark:text-blue-500 sm:py-6"
               href="#"
               aria-current="page"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               className="font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 sm:py-6"
               href="#SectionWork"
             >
               Work
-            </a>
-            <a
+            </Link>
+            <Link
               className="font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 sm:py-6"
               href="#"
             >
               Blog
-            </a>
+            </Link>
             <div className="hs-dropdown [--adaptive:none] [--strategy:static] sm:py-4 sm:[--strategy:fixed] sm:[--trigger:hover]">
               <button
                 type="button"
@@ -114,12 +115,12 @@ const Navbar = () => {
                 </svg>
               </button>
               <div className="hs-dropdown-menu hs-dropdown-open:opacity-100 top-full z-10 hidden rounded-lg bg-white p-2 opacity-0 transition-[opacity,margin] duration-[0.1ms] before:absolute before:-top-5 before:left-0 before:h-5 before:w-full dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800 sm:w-48 sm:border sm:shadow-md sm:duration-[150ms] sm:dark:border">
-                <a
+                <Link
                   className="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                   href="#"
                 >
                   About
-                </a>
+                </Link>
                 <div className="hs-dropdown relative [--adaptive:none] [--strategy:static] sm:[--trigger:hover] sm:[--strategy:absolute]">
                   <button
                     type="button"
@@ -143,40 +144,40 @@ const Navbar = () => {
                     </svg>
                   </button>
                   <div className="hs-dropdown-menu hs-dropdown-open:opacity-100 right-full top-0 z-10 !mx-[10px] hidden rounded-lg bg-white p-2 opacity-0 transition-[opacity,margin] duration-[0.1ms] before:absolute before:-right-5 before:top-0 before:h-full before:w-5 dark:divide-gray-700 dark:border-gray-700 dark:bg-gray-800 sm:mt-2 sm:w-48 sm:border sm:shadow-md sm:duration-[150ms] sm:dark:border">
-                    <a
+                    <Link
                       className="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                       href="#"
                     >
                       About
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       className="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                       href="#"
                     >
                       Downloads
-                    </a>
-                    <a
+                    </Link>
+                    <Link
                       className="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                       href="#"
                     >
                       Team Account
                       {/* #TODO  I probably had to remove it but I don't know for what purpose */}
-                    </a>
+                    </Link>
                   </div>
                 </div>
-                <a
+                <Link
                   className="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                   href="#"
                 >
                   Downloads
-                </a>
-                <a
+                </Link>
+                <Link
                   className="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                   href="#"
                 >
                   Team Account{" "}
                   {/* #TODO  I probably had to remove it but I don't know for what purpose */}
-                </a>
+                </Link>
               </div>
             </div>
           </div>
