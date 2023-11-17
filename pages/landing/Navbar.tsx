@@ -83,12 +83,6 @@ const Navbar = () => {
               className="font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 sm:py-6"
               href="#"
             >
-              Account
-            </a>
-            <a
-              className="font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 sm:py-6"
-              href="#"
-            >
               Work
             </a>
             <a
@@ -129,7 +123,7 @@ const Navbar = () => {
                 <div className="hs-dropdown relative [--adaptive:none] [--strategy:static] sm:[--trigger:hover] sm:[--strategy:absolute]">
                   <button
                     type="button"
-                    className="flex w-full w-full items-center justify-between rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
+                    className="flex  w-full items-center justify-between rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                   >
                     Sub Menu
                     <svg
@@ -166,6 +160,7 @@ const Navbar = () => {
                       href="#"
                     >
                       Team Account
+                      {/* #TODO  I probably had to remove it but I don't know for what purpose */}
                     </a>
                   </div>
                 </div>
@@ -179,26 +174,11 @@ const Navbar = () => {
                   className="flex items-center gap-x-3.5 rounded-md px-3 py-2 text-sm text-gray-800 hover:bg-gray-100 focus:ring-2 focus:ring-blue-500 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300"
                   href="#"
                 >
-                  Team Account
+                  Team Account{" "}
+                  {/* #TODO  I probably had to remove it but I don't know for what purpose */}
                 </a>
               </div>
             </div>
-            <a
-              className="flex items-center gap-x-2 font-medium text-gray-500 hover:text-blue-600 dark:border-gray-700 dark:text-gray-400 dark:hover:text-blue-500 sm:my-6 sm:border-l sm:border-gray-300 sm:pl-6"
-              href="#"
-            >
-              <svg
-                className="h-4 w-4"
-                xmlns="http://www.w3.org/2000/svg"
-                width={16}
-                height={16}
-                fill="currentColor"
-                viewBox="0 0 16 16"
-              >
-                <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z" />
-              </svg>
-              Log in
-            </a>
           </div>
         </div>
       </nav>
