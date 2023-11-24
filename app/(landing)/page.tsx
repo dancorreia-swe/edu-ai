@@ -5,8 +5,9 @@ import IconSection from "@/pages/landing/IconSection";
 import Navbar from "@/pages/landing/Navbar";
 import ParticlesBackground from "@/pages/landing/Particles";
 import React from "react";
-import BoxSection from "@/pages/landing/Case";
+import BoxSection from "@/pages/landing/CaseCard";
 import Trybtn from "@/pages/landing/TryBtn";
+import CaseCard from "@/pages/landing/CaseCard";
 
 type Props = {};
 
@@ -17,7 +18,7 @@ const LandingHome = (props: Props) => {
       <Hero />
       <IconSection />
       <Features />
-      <BoxSection />
+      <CaseCard />
       <Trybtn />
       <Footer />
     </>

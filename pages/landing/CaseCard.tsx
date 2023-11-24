@@ -1,7 +1,7 @@
 import React from "react";
 import IconCard from "./IconCard";
 import { IconAdOff } from "@tabler/icons-react";
-const BoxSection = () => {
+const CaseCard = () => {
   return (
     <div id="SectionCase">
       <div className="lg:px-4- relative mx-auto mt-32 max-w-[85rem] bg-slate-950 px-4 py-10 sm:px-2 lg:py-14 ">
@@ -47,4 +47,4 @@ const BoxSection = () => {
   );
 };
 
-export default BoxSection;
+export default CaseCard;
