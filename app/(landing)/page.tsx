@@ -6,7 +6,7 @@ import Navbar from "@/pages/landing/Navbar";
 import ParticlesBackground from "@/pages/landing/Particles";
 import React from "react";
 import BoxSection from "@/pages/landing/Case";
-import Trybtn from "@/pages/landing/Try";
+import Trybtn from "@/pages/landing/TryBtn";
 
 type Props = {};
 

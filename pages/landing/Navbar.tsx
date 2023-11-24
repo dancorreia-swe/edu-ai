@@ -161,7 +161,6 @@ const Navbar = () => {
                       href="#"
                     >
                       Team Account
-                      {/* #TODO  I probably had to remove it but I don't know for what purpose */}
                     </Link>
                   </div>
                 </div>
@@ -176,7 +175,6 @@ const Navbar = () => {
                   href="#"
                 >
                   Team Account{" "}
-                  {/* #TODO  I probably had to remove it but I don't know for what purpose */}
                 </Link>
               </div>
             </div>
