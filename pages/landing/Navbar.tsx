@@ -84,13 +84,13 @@ const Navbar = () => {
               className="font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 sm:py-6"
               href="#SectionWork"
             >
-              Work
+              Ferramentas
             </Link>
             <Link
               className="font-medium text-gray-500 hover:text-gray-400 dark:text-gray-400 dark:hover:text-gray-500 sm:py-6"
-              href="#"
+              href="#SectionCase"
             >
-              Blog
+              Casos
             </Link>
             <div className="hs-dropdown [--adaptive:none] [--strategy:static] sm:py-4 sm:[--strategy:fixed] sm:[--trigger:hover]">
               <button
