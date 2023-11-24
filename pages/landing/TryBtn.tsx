@@ -1,6 +1,6 @@
 import React from "react";
 
-const Trybtn = () => {
+const TryBtn = () => {
   return (
     <div className="bg-white p-16 text-center">
       <div className="mb-10 mt-4  text-center text-3xl font-extrabold ">
@@ -33,4 +33,4 @@ const Trybtn = () => {
   );
 };
 
-export default Trybtn;
+export default TryBtn;
