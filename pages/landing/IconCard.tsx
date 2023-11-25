@@ -4,11 +4,22 @@ type IconCardProps = {
   icon: ElementType;
   title: string;
   description: string;
+  bg?: boolean;
 };
 
-const IconCard: FC<IconCardProps> = ({ icon: Icon, title, description }) => {
+const IconCard: FC<IconCardProps> = ({
+  icon: Icon,
+  title,
+  description,
+  bg,
+}) => {
   return (
-    <div className="text-center">
+    <div
+      className={`text-center ${
+        bg &&
+        "px-8 py-12 bg-slate-900 rounded hover:bg-slate-800/75 transition-colors ease-out"
+      }`}
+    >
       <div className="group mx-auto flex h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-gray-50 transition-colors ease-out dark:border-gray-700 dark:bg-slate-800 hover:dark:border-violet-600">
         <Icon className="group-hover:text-violet-200" />
       </div>

@@ -2,7 +2,6 @@ const Features = () => {
   return (
     <div id="SectionWork">
       <section className="relative mx-auto mt-32 max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="relative"></div>
         <div className="relative p-6 md:p-16">
           {/* Grid */}
           <div className="relative z-10 lg:grid lg:grid-cols-12 lg:items-center lg:gap-16">
