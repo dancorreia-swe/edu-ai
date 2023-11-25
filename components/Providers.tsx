@@ -3,7 +3,7 @@
 import { trpc } from "@/app/_trpc/client";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/react-query";
-import { PropsWithChildren, useState } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 
 const Providers = ({ children }: PropsWithChildren) => {
   const [queryClient] = useState(() => new QueryClient());
@@ -12,6 +12,10 @@ const Providers = ({ children }: PropsWithChildren) => {
       links: [httpBatchLink({ url: "http://localhost:3000/api/trpc" })],
     }),
   );
+
+  useEffect(() => {
+    import("preline");
+  }, []);
 
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
