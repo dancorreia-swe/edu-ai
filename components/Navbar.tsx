@@ -1,48 +1,50 @@
 "use client";
 
 import Link from "next/link";
-import { NavbarItemProps } from "./NavbarItem";
+import NavbarItem, { NavbarItemProps } from "./NavbarItem";
 import {
   IconMessageQuestion,
   IconPageBreak,
   IconPencilQuestion,
+  IconResize,
 } from "@tabler/icons-react";
-import { PropsWithChildren } from "react";
 import { usePathname } from "next/navigation";
 import { NavigationMenu } from "@radix-ui/react-navigation-menu";
 import { NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import { ModeToggle } from "./ui/mode-toggle";
-import { useTranslation } from "@/app/i18n/client";
-
-type NavbarItemPropsWithoutActive = Omit<NavbarItemProps, "active">;
-
-const navbarList: NavbarItemPropsWithoutActive[] = [
-  {
-    href: "/app/summarize",
-    icon: IconPageBreak,
-    label: "summarize",
-  },
-  {
-    href: "app/questions-and-answers",
-    icon: IconPencilQuestion,
-    label: "qa-answers",
-  },
-  {
-    href: "app/chat",
-    icon: IconMessageQuestion,
-    label: "chat",
-  },
-];
+import { useTranslations } from "next-intl";
+import { NavbarLabels } from "@/app/[locale]/app/layout";
 
 type NavbarProps = {
   children: React.ReactNode;
-  params: { lng: string };
+  labels: NavbarLabels;
 };
 
-const Navbar = ({ children, params: { lng } }: NavbarProps) => {
+export type NavbarItemPropsWithoutActive = Omit<NavbarItemProps, "active">;
+
+const Navbar = ({ children, labels }: NavbarProps) => {
   const pathname = usePathname();
-  const { t } = useTranslation(lng, "navigation");
+  const { summarize, qaAnswer, chat } = labels.navbar;
+  const { light, dark, system } = labels.theme;
+
+  const navbarList: NavbarItemPropsWithoutActive[] = [
+    {
+      href: "/app/summarize",
+      icon: IconResize,
+      label: summarize,
+    },
+    {
+      href: "app/questions-and-answers",
+      icon: IconPencilQuestion,
+      label: qaAnswer,
+    },
+    {
+      href: "app/chat",
+      icon: IconMessageQuestion,
+      label: chat,
+    },
+  ];
 
   return (
     <>
@@ -61,13 +63,13 @@ const Navbar = ({ children, params: { lng } }: NavbarProps) => {
                   active={pathname === href}
                 >
                   {Icon && <Icon size={16} />}
-                  {t(label)}
+                  {label}
                 </NavigationMenuLink>
               </Link>
             ))}
           </NavigationMenuList>
         </NavigationMenu>
-        <ModeToggle />
+        <ModeToggle light={light} dark={dark} system={system} />
       </div>
       {children}
     </>

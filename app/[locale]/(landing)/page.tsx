@@ -16,7 +16,7 @@ const LandingHome = ({ params: { lng } }: LandingHomeProps) => {
   return (
     <>
       <Navbar />
-      <Hero lng={lng} />
+      <Hero />
       <IconSection />
       <Features />
       <UseCaseSection />

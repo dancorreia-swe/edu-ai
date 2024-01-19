@@ -1,13 +1,8 @@
 "use client";
+import { useTranslations } from "next-intl";
 
-import { useTranslation } from "@/app/i18n/client";
-
-type SummarizeContentProps = {
-  lng: string;
-};
-
-const SummarizeContent = ({ lng }: SummarizeContentProps) => {
-  const { t } = useTranslation(lng, "translation");
+const SummarizeContent = () => {
+  // const t = useTranslations("Summarize");
 
   return (
     <div className="flex w-full items-center justify-center">
@@ -32,8 +27,8 @@ const SummarizeContent = ({ lng }: SummarizeContentProps) => {
             />
           </svg>
           <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-            <span className="font-semibold">{t("summarize.dropzone.cta")}</span>
-            {t("summarize.dropzone")}
+            {/* <span className="font-semibold">{t("")}</span>
+            {t("")} */}
           </p>
           <p className="text-xs text-gray-500 dark:text-gray-400">
             SVG, PNG, JPG or GIF (MAX. 800x400px)

@@ -1,36 +1,13 @@
-import { NextResponse } from "next/server";
-import acceptLanguage from "accept-language";
-import { fallbackLng, languages } from "./app/i18n/settings";
+import createMiddleware from "next-intl/middleware";
+import { locales, localePrefix } from "./config";
 
-acceptLanguage.languages(languages);
+export default createMiddleware({
+  defaultLocale: "en",
+  localePrefix,
+  locales,
+});
 
 export const config = {
-  matcher: "/:lng*",
+  // Match only internationalized pathnames
+  matcher: ["/", "/(pt-br|en)/:path*"],
 };
-
-const cookieName: string = "i18next";
-
-export function middleware(req: any) {
-  let lng: string | null = null;
-
-  if (req.cookies.has(cookieName))
-    lng = acceptLanguage.get(req.cookies.get(cookieName).value);
-  if (!lng) lng = acceptLanguage.get(req.headers.get("Accept-Language"));
-  if (!lng) lng = fallbackLng;
-
-  if (req.nextUrl.pathname === "/") {
-    return NextResponse.redirect(new URL(`/${lng}`, req.url));
-  }
-
-  if (req.headers.has("referer")) {
-    const refererUrl = new URL(req.headers.get("referer"));
-    const lngInReferer = languages.find((l: string) =>
-      refererUrl.pathname.startsWith(`/${l}`),
-    );
-    const response = NextResponse.next();
-    if (lngInReferer) response.cookies.set(cookieName, lngInReferer);
-    return response;
-  }
-
-  return NextResponse.next();
-}

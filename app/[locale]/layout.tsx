@@ -1,15 +1,15 @@
 import Providers from "@/components/Providers";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { dir } from "i18next";
-import { languages } from "../i18n/settings";
 import "../globals.css";
 import { Toaster } from "sonner";
+import { locales } from "@/config";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export async function generateStaticParams() {
-  return languages.map((lng) => ({ lng }));
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
 }
 
 export const metadata: Metadata = {
@@ -20,20 +20,17 @@ export const metadata: Metadata = {
   description: "Plataforma para gerar perguntas, resumos e muito mais!",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-  params: { lng },
+  params: { locale },
 }: {
   children: React.ReactNode;
-  params: { lng: string };
+  params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
+
   return (
-    <html
-      lang={lng}
-      className="scroll-smooth"
-      suppressHydrationWarning
-      dir={dir(lng)}
-    >
+    <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.className} transition-color font-inter scroll-smooth tracking-tight antialiased duration-150 dark:bg-indigo-950`}
       >

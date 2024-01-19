@@ -1,0 +1,18 @@
+{
+  "Summarize": {
+    "metadata-title": "Summarize",
+    "metadata-description": "Summarize the content of a document or a text.",
+    "title": "Summarize",
+    "subtitle": "Summarize the content of a document or a text."
+  },
+  "Navbar": {
+    "summarize": "Summarize",
+    "qa-answer": "Questions & Answers",
+    "chat": "Chat"
+  },
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

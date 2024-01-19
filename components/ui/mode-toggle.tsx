@@ -12,7 +12,15 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
-export function ModeToggle() {
+export function ModeToggle({
+  light,
+  dark,
+  system,
+}: {
+  light: string;
+  dark: string;
+  system: string;
+}) {
   const { setTheme } = useTheme();
 
   return (
@@ -32,19 +40,19 @@ export function ModeToggle() {
           onClick={() => setTheme("light")}
           className="cursor-pointer"
         >
-          Light
+          {light}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("dark")}
           className="cursor-pointer"
         >
-          Dark
+          {dark}
         </DropdownMenuItem>
         <DropdownMenuItem
           onClick={() => setTheme("system")}
           className="cursor-pointer"
         >
-          System
+          {system}
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

@@ -1,13 +1,9 @@
-import Link from "next/link";
 import React from "react";
+import { Link } from "@/navigation";
 import ParticlesBackground from "./Particles";
 import CtaButton from "./CtaButton";
 
-type HeroProps = {
-  lng: string;
-};
-
-const Hero = ({ lng }: HeroProps) => {
+const Hero = () => {
   return (
     <section className="relative">
       <div className="bg-slate-950">
@@ -20,27 +16,29 @@ const Hero = ({ lng }: HeroProps) => {
                 className="group inline-block rounded-full border border-white/[.05] bg-white/[.05] p-1 pl-4 shadow-md hover:bg-white/[.1]"
                 href="../figma.html"
               >
-                <p className="mr-2 inline-block text-sm text-white">
-                  <span className="font-bold">EduAI</span> é totalmente
-                  gratuito.
-                </p>
-                <span className="inline-flex items-center justify-center gap-x-2 rounded-full bg-white/[.075] px-3 py-2 text-sm font-semibold text-white group-hover:bg-white/[.1]">
-                  <svg
-                    className="h-2.5 w-2.5"
-                    width={16}
-                    height={16}
-                    viewBox="0 0 16 16"
-                    fill="none"
-                  >
-                    <title>right arrow icon</title>
-                    <path
-                      d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
+                <div>
+                  <p className="mr-2 inline-block text-sm text-white">
+                    <span className="font-bold">EduAI</span> é totalmente
+                    gratuito.
+                  </p>
+                  <span className="inline-flex items-center justify-center gap-x-2 rounded-full bg-white/[.075] px-3 py-2 text-sm font-semibold text-white group-hover:bg-white/[.1]">
+                    <svg
+                      className="h-2.5 w-2.5"
+                      width={16}
+                      height={16}
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <title>right arrow icon</title>
+                      <path
+                        d="M5.27921 2L10.9257 7.64645C11.1209 7.84171 11.1209 8.15829 10.9257 8.35355L5.27921 14"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </span>
+                </div>
               </Link>
             </div>
             {/* End Announcement Banner */}
@@ -64,7 +62,7 @@ const Hero = ({ lng }: HeroProps) => {
             </div>
             {/* Buttons */}
             <div className="text-center">
-              <CtaButton lng={lng} />
+              <CtaButton />
             </div>
             {/* End Buttons */}
           </div>
