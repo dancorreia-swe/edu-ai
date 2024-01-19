@@ -3,7 +3,11 @@ import React from "react";
 import ParticlesBackground from "./Particles";
 import CtaButton from "./CtaButton";
 
-const Hero = () => {
+type HeroProps = {
+  lng: string;
+};
+
+const Hero = ({ lng }: HeroProps) => {
   return (
     <section className="relative">
       <div className="bg-slate-950">
@@ -60,7 +64,7 @@ const Hero = () => {
             </div>
             {/* Buttons */}
             <div className="text-center">
-              <CtaButton />
+              <CtaButton lng={lng} />
             </div>
             {/* End Buttons */}
           </div>

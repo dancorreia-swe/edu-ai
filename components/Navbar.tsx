@@ -1,15 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import NavbarItem, { NavbarItemProps } from "./NavbarItem";
+import { NavbarItemProps } from "./NavbarItem";
 import {
-  IconHome,
   IconMessageQuestion,
   IconPageBreak,
   IconPencilQuestion,
 } from "@tabler/icons-react";
 import { PropsWithChildren } from "react";
 import { usePathname } from "next/navigation";
+import { NavigationMenu } from "@radix-ui/react-navigation-menu";
+import { NavigationMenuLink, NavigationMenuList } from "./ui/navigation-menu";
+import { cn } from "@/lib/utils";
+import { ModeToggle } from "./ui/mode-toggle";
+import { useTranslation } from "@/app/i18n/client";
 
 type NavbarItemPropsWithoutActive = Omit<NavbarItemProps, "active">;
 
@@ -17,61 +21,55 @@ const navbarList: NavbarItemPropsWithoutActive[] = [
   {
     href: "/app/summarize",
     icon: IconPageBreak,
-    label: "Sumarizar",
+    label: "summarize",
   },
   {
     href: "app/questions-and-answers",
     icon: IconPencilQuestion,
-    label: "Perguntas e Respostas",
+    label: "qa-answers",
   },
   {
     href: "app/chat",
     icon: IconMessageQuestion,
-    label: "Chat",
+    label: "chat",
   },
 ];
 
-const Navbar = ({ children }: PropsWithChildren) => {
+type NavbarProps = {
+  children: React.ReactNode;
+  params: { lng: string };
+};
+
+const Navbar = ({ children, params: { lng } }: NavbarProps) => {
   const pathname = usePathname();
+  const { t } = useTranslation(lng, "navigation");
 
   return (
     <>
-      <div>
-        {/* Sidebar */}
-        <div
-          id="application-sidebar-dark"
-          className="hs-overlay hs-overlay-open:translate-x-0 fixed bottom-0 start-0 top-0 z-[60] hidden w-64 -translate-x-full transform overflow-y-auto border-e border-gray-800 bg-gradient-to-b from-violet-600/[.15] to-slate-950 pb-10 pt-7 transition-all duration-300 lg:bottom-0 lg:end-auto lg:block lg:translate-x-0 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-300 dark:[&::-webkit-scrollbar-thumb]:bg-slate-500 [&::-webkit-scrollbar-track]:bg-gray-100 dark:[&::-webkit-scrollbar-track]:bg-slate-700 [&::-webkit-scrollbar]:w-2 bg-black"
-        >
-          <div className="px-6">
-            <Link
-              className="flex-none text-xl font-semibold text-white focus:outline-none focus:ring-1 focus:ring-gray-600"
-              href="#"
-              aria-label="Brand"
-            >
-              EduAI
-            </Link>
-          </div>
-          <nav
-            className="flex w-full flex-col flex-wrap p-6"
-            data-hs-accordion-always-open
-          >
-            <ul className="space-y-1.5">
-              {navbarList.map((item) => {
-                return (
-                  <li key={item.href}>
-                    <NavbarItem {...item} active={pathname === item.href} />
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </div>
-        {/* End Sidebar */}
-        {/* Content */}
-        <div>
-          {children}
-        </div>
+      <div className="z-50 flex w-full flex-wrap items-center border-b bg-white py-2.5 text-sm text-neutral-800 dark:border-slate-700 dark:bg-slate-900 dark:text-white sm:flex-nowrap sm:justify-around sm:py-4">
+        <div className="text-xl font-semibold">EduAI</div>
+        <NavigationMenu>
+          <NavigationMenuList className="space-x-12">
+            {navbarList.map(({ label, href, icon: Icon }) => (
+              <Link legacyBehavior href={href} key={href}>
+                <NavigationMenuLink
+                  className={cn(
+                    "flex cursor-pointer items-center gap-2 rounded px-2 py-1 transition-colors hover:bg-violet-500/20",
+                    pathname === href &&
+                      "bg-neutral-200/60 dark:bg-violet-500/20",
+                  )}
+                  active={pathname === href}
+                >
+                  {Icon && <Icon size={16} />}
+                  {t(label)}
+                </NavigationMenuLink>
+              </Link>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+        <ModeToggle />
       </div>
+      {children}
     </>
   );
 };

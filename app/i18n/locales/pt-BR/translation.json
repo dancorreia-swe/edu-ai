@@ -1,0 +1,11 @@
+{
+  "theme.light": "Claro",
+  "theme.dark": "Escuro",
+  "theme.system": "Sistema",
+  "language.en": "Inglês",
+  "language.pt": "Português",
+  "summarize.title": "Sumarização",
+  "summarize.subtitle": "Sumarize um texto ou documento com inteligência artificial",
+  "summarize.dropzone.cta": "Clique para selecionar ",
+  "summarize.dropzone": "ou arraste e solte um arquivo"
+}
