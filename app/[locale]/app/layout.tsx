@@ -1,8 +1,12 @@
 import Navbar from "@/components/Navbar";
 import { useTranslations } from "next-intl";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 type AppLayoutProps = {
   children: React.ReactNode;
+  params: {
+    locale: string;
+  };
 };
 
 export type NavbarLabels = {
@@ -18,7 +22,8 @@ export type NavbarLabels = {
   };
 };
 
-const AppLayout = ({ children }: AppLayoutProps) => {
+const AppLayout = ({ children, params: { locale } }: AppLayoutProps) => {
+  unstable_setRequestLocale(locale);
   const n = useTranslations("Navbar");
   const t = useTranslations("Theme");
 

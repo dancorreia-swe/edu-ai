@@ -1,5 +1,5 @@
 import SummarizeContent from "@/components/pages/summarize/SummarizeContent";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 
 export async function generateMetadata({
@@ -13,7 +13,8 @@ export async function generateMetadata({
     description: t("metadata-description"),
   };
 }
-const SummarizePage = () => {
+const SummarizePage = ({ params: { locale } }: any) => {
+  unstable_setRequestLocale(locale);
   const t = useTranslations("Summarize");
 
   return (
@@ -22,7 +23,7 @@ const SummarizePage = () => {
         <h1 className="mb-1 text-3xl font-semibold">{t("title")}</h1>
         <span className="text-base text-neutral-500">{t("subtitle")}</span>
       </div>
-      {/* <SummarizeContent  />*/}
+      <SummarizeContent />
     </div>
   );
 };

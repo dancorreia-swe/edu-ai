@@ -2,8 +2,6 @@
 import { useTranslations } from "next-intl";
 
 const SummarizeContent = () => {
-  // const t = useTranslations("Summarize");
-
   return (
     <div className="flex w-full items-center justify-center">
       <label

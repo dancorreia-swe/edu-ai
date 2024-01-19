@@ -5,14 +5,16 @@ import IconSection from "@/components/pages/landing/IconSection";
 import Navbar from "@/components/pages/landing/Navbar";
 import CtaSection from "@/components/pages/landing/CtaSection";
 import UseCaseSection from "@/components/pages/landing/UseCaseSection";
+import { unstable_setRequestLocale } from "next-intl/server";
 
 type LandingHomeProps = {
   params: {
-    lng: string;
+    locale: string;
   };
 };
 
-const LandingHome = ({ params: { lng } }: LandingHomeProps) => {
+const LandingHome = ({ params: { locale } }: LandingHomeProps) => {
+  unstable_setRequestLocale(locale);
   return (
     <>
       <Navbar />

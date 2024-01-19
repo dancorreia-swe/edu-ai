@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "@/navigation";
-import ParticlesBackground from "./Particles";
 import CtaButton from "./CtaButton";
 
 const Hero = () => {
@@ -9,7 +8,6 @@ const Hero = () => {
       <div className="bg-slate-950">
         <div className="relative bg-gradient-to-b from-violet-600/[.15] via-transparent pt-32">
           <div className="mx-auto max-w-[85rem] space-y-8 px-4 py-24 pb-60 sm:px-6 lg:px-8">
-            <ParticlesBackground />
             {/* Announcement Banner */}
             <div className="flex justify-center">
               <Link
