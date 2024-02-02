@@ -1,4 +1,3 @@
-import SummarizeContent from "@/components/pages/summarize/SummarizeContent";
 import { getTranslations, unstable_setRequestLocale } from "next-intl/server";
 import { useTranslations } from "next-intl";
 import SummarizePage from "@/components/pages/summarize/SummarizePage";
@@ -15,6 +14,13 @@ export async function generateMetadata({
   };
 }
 
+export type i18nSummarizePage = {
+  header: {
+    title: string;
+    subtitle: string;
+  };
+};
+
 const SummarizePageServer = ({ params: { locale } }: any) => {
   unstable_setRequestLocale(locale);
   const t = useTranslations("Summarize");
@@ -24,8 +30,9 @@ const SummarizePageServer = ({ params: { locale } }: any) => {
       title: t("title"),
       subtitle: t("subtitle"),
     },
-  };
-  return <SummarizePage i18n={i18n}/>;
+  } as i18nSummarizePage;
+
+  return <SummarizePage i18n={i18n} />;
 };
 
 export default SummarizePageServer;
