@@ -32,7 +32,7 @@ export default async function RootLayout({
   return (
     <html lang={locale} className="scroll-smooth" suppressHydrationWarning>
       <body
-        className={`${inter.className} transition-color font-inter scroll-smooth tracking-tight antialiased duration-150 dark:bg-indigo-950`}
+        className={`${inter.className} transition-color font-inter scroll-smooth tracking-tight antialiased duration-150 dark:bg-slate-950/80`}
       >
         <Providers>{children}</Providers>
         <Toaster />

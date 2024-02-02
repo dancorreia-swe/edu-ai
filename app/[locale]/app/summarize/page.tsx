@@ -19,6 +19,10 @@ export type i18nSummarizePage = {
     title: string;
     subtitle: string;
   };
+  type: {
+    text: string;
+    file: string
+  }
 };
 
 const SummarizePageServer = ({ params: { locale } }: any) => {
@@ -30,6 +34,10 @@ const SummarizePageServer = ({ params: { locale } }: any) => {
       title: t("title"),
       subtitle: t("subtitle"),
     },
+    type: {
+      text: t("type_text"),
+      file: t("type_file")
+    }
   } as i18nSummarizePage;
 
   return <SummarizePage i18n={i18n} />;

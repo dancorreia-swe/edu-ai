@@ -48,7 +48,7 @@ const Navbar = ({ children, labels }: NavbarProps) => {
 
   return (
     <>
-      <div className="z-50 flex w-full flex-wrap items-center border-b bg-white py-2.5 text-sm text-neutral-800 dark:border-slate-700 dark:bg-slate-900 dark:text-white sm:flex-nowrap sm:justify-around sm:py-4">
+      <div className="z-50 flex w-full flex-wrap items-center border-b bg-white py-2.5 text-sm text-neutral-800 dark:border-slate-700 dark:bg-slate-950 dark:text-white sm:flex-nowrap sm:justify-around sm:py-4">
         <div className="text-xl font-semibold">EduAI</div>
         <NavigationMenu>
           <NavigationMenuList className="space-x-12">

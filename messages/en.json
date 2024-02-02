@@ -3,7 +3,9 @@
     "metadata-title": "Summarize",
     "metadata-description": "Summarize the content of a document or a text.",
     "title": "Summarize",
-    "subtitle": "Summarize the content of a document or a text."
+    "subtitle": "Summarize the content of a document or a text.",
+    "type_text": "Text",
+    "type_file": "File"
   },
   "Navbar": {
     "summarize": "Summarize",

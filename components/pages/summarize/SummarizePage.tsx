@@ -1,6 +1,6 @@
 "use client";
-
-import { useState } from "react";
+import { Switch } from "@/components/ui/switch"
+import { useEffect, useState } from "react";
 import SummarizeContent from "./SummarizeContent";
 import { i18nSummarizePage } from "@/app/[locale]/app/summarize/page";
 
@@ -10,7 +10,8 @@ type SummarizePageProps = {
 
 const SummarizePage = ({ i18n }: SummarizePageProps) => {
   const { title, subtitle } = i18n.header;
-  const [isText, setIsText] = useState(true);
+  const { text, file } = i18n.type;
+  const [isChecked, setIsChecked] = useState(false);
 
   return (
     <div className="container my-8">
@@ -19,8 +20,13 @@ const SummarizePage = ({ i18n }: SummarizePageProps) => {
         <span className="text-base text-neutral-500 dark:text-neutral-300">
           {subtitle}
         </span>
+        <div className="flex justify-end ml-auto space-x-4 mr-20 mb-8">
+          <span className={`${isChecked ? 'text-slate-500' : 'dark:text-gray-200'}`}>{text}</span>
+          <Switch checked={isChecked} onCheckedChange={(prev) => setIsChecked(prev)} />
+          <span className={`${!isChecked ? 'text-slate-500' : 'dark:text-gray-200'}`}>{file}</span>
+        </div>
       </div>
-      <SummarizeContent />
+      <SummarizeContent checked={isChecked}/>
     </div>
   );
 };
