@@ -40,7 +40,11 @@ const AppLayout = ({ children, params: { locale } }: AppLayoutProps) => {
     },
   };
 
-  return <Navbar labels={labels}>{children}</Navbar>;
+  return (
+    <Navbar labels={labels}>
+      <div className="container my-8">{children}</div>
+    </Navbar>
+  );
 };
 
 export default AppLayout;
