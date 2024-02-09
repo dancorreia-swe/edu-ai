@@ -1,18 +1,7 @@
 import { publicProcedure, router } from "./trpc";
+import { OpenAI } from "@langchain/openai";
 import { z } from "zod";
 
-export const appRouter = router({
-  generateQA: publicProcedure
-    .input(
-      z.object({
-        topic: z.string(),
-      }),
-    )
-    .mutation((options) => {
-      return {
-        topic: options.input.topic,
-      };
-    }),
-});
+export const appRouter = router({});
 
 export type AppRouter = typeof appRouter;

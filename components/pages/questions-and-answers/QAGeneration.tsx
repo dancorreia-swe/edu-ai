@@ -9,9 +9,15 @@ type QAGenerationProps = {
   label: string;
   result?: string;
   isLoading: boolean;
+  spoilerButton?: boolean;
 };
 
-const QAGeneration = ({ label, result, isLoading }: QAGenerationProps) => {
+const QAGeneration = ({
+  label,
+  result,
+  isLoading,
+  spoilerButton,
+}: QAGenerationProps) => {
   const [spoiler, setSpoiler] = useState<boolean>(false as boolean);
 
   if (isLoading) {
@@ -22,12 +28,14 @@ const QAGeneration = ({ label, result, isLoading }: QAGenerationProps) => {
     <>
       <div className="mb-2 flex items-center justify-between">
         <h2 className="text-md mb-2 font-semibold">{label}</h2>
-        <Button
-          onClick={() => setSpoiler(!spoiler)}
-          className="h-full px-2 py-1"
-        >
-          {spoiler ? "Mostrar" : "Esconder"}
-        </Button>
+        {spoilerButton && (
+          <Button
+            onClick={() => setSpoiler(!spoiler)}
+            className="h-full px-2 py-1"
+          >
+            {spoiler ? "Mostrar" : "Esconder"}
+          </Button>
+        )}
       </div>
       <div
         className={cn(

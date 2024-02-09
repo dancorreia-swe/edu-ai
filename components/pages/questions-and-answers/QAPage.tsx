@@ -18,17 +18,12 @@ const QaPage = ({ i18n }: QaPageProps) => {
   const mutation = trpc.generateQA.useMutation({});
 
   const handleGenerateQA = () => {
-    mutation.mutate(
-      {
-        topic,
-      },
-      {
-        onSuccess: (data) => {
-          console.log(data);
-        },
-      },
-    );
+    mutation.mutate({
+      topic,
+    });
   };
+
+  console.log(mutation.data?);
 
   return (
     <>
