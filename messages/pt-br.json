@@ -5,11 +5,19 @@
     "title": "Sumarização",
     "subtitle": "Sumarize o conteúdo de um documento ou de um texto."
   },
+   "Chat": {
+    "metadata-title":"Chat",
+    "metadata-description": "Converse com seu chat",
+    "title": "Chat",
+    "subtitle": "Converse com seu chat e resolva suas necessidades"
+  },
+  
   "Navbar": {
     "summarize": "Sumarização",
     "qa-answer": "Perguntas e Respostas",
     "chat": "Chat"
   },
+
   "Theme": {
     "light": "Claro",
     "dark": "Escuro",

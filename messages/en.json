@@ -7,6 +7,12 @@
     "type_text": "Text",
     "type_file": "File"
   },
+  "Chat": {
+    "metadata-title":"Chat",
+    "metadata-description": "Chat with your file",
+    "title": "Chat",
+    "subtitle": "Chat with your file and see what you need"
+  },
   "Navbar": {
     "summarize": "Summarize",
     "qa-answer": "Questions & Answers",
