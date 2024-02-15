@@ -1,6 +1,6 @@
 "use client";
 import { Switch } from "@/components/ui/switch"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import SummarizeContent from "./SummarizeContent";
 import { i18nSummarizePage } from "@/app/[locale]/app/summarize/page";
 
