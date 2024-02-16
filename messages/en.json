@@ -1,0 +1,29 @@
+{
+  "Summarize": {
+    "metadata-title": "Summarize",
+    "metadata-description": "Summarize the content of a document or a text.",
+    "title": "Summarize",
+    "subtitle": "Summarize the content of a document or a text.",
+    "type_text": "Text",
+    "type_file": "File"
+  },
+  "QA": {
+    "metadata-title": "Questions & Answers",
+    "metadata-description": "Ask questions and get answers from a document or a text.",
+    "title": "Questions & Answers",
+    "subtitle": "Ask questions and get answers from a document or a text.",
+    "topic_input_label": "Topic",
+    "topic_input_placeholder": "Enter a topic",
+    "topic_generate_button": "Generate"
+  },
+  "Navbar": {
+    "summarize": "Summarize",
+    "qa-answer": "Questions & Answers",
+    "chat": "Chat"
+  },
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

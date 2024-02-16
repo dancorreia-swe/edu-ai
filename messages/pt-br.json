@@ -1,0 +1,24 @@
+{
+  "Summarize": {
+    "metadata-title": "Sumarização",
+    "metadata-description": "Sumarize o conteúdo de um documento ou de um texto.",
+    "title": "Sumarização",
+    "subtitle": "Sumarize o conteúdo de um documento ou de um texto."
+  },
+  "QA": {
+    "metadata-title": "Perguntas e Respostas",
+    "metadata-description": "Obtenha perguntas e respostas sobre um texto ou tópico",
+    "title": "Perguntas e Respostas",
+    "subtitle": "Selecione um tema ou tópico e gere perguntas e respostas."
+  },
+  "Navbar": {
+    "summarize": "Sumarização",
+    "qa-answer": "Perguntas e Respostas",
+    "chat": "Chat"
+  },
+  "Theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  }
+}
