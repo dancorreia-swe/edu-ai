@@ -18,7 +18,7 @@ const QAGeneration = ({
   isLoading,
   spoilerButton,
 }: QAGenerationProps) => {
-  const [spoiler, setSpoiler] = useState<boolean>(false as boolean);
+  const [spoiler, setSpoiler] = useState<boolean>(true as boolean);
 
   if (isLoading) {
     return <Skeleton className="h-[400px] w-full dark:bg-slate-700" />;
@@ -39,13 +39,14 @@ const QAGeneration = ({
       </div>
       <div
         className={cn(
-          `rounded-md border bg-slate-900 p-4 duration-300 animate-in dark:border-slate-700`,
-          {
-            "blur-sm": spoiler,
-          },
+          `rounded-md border p-4 duration-300 animate-in dark:border-slate-700 dark:bg-slate-900`,
         )}
       >
-        <p>{result ?? "Sem resultado"}</p>
+        <p
+          className={`${spoiler && spoilerButton && "blur-md"} transition-all`}
+        >
+          {result ?? "Sem resultado"}
+        </p>
       </div>
     </>
   );

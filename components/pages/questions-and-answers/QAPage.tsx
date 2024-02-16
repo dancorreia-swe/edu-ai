@@ -23,8 +23,6 @@ const QaPage = ({ i18n }: QaPageProps) => {
     });
   };
 
-  console.log(mutation.data?);
-
   return (
     <>
       <div className="mb-4 space-y-2">
@@ -57,10 +55,14 @@ const QaPage = ({ i18n }: QaPageProps) => {
           )}
         </div>
 
-        <div className="h-full border dark:border-slate-600"></div>
-        {mutation.data && mutation.status === "success" && (
-          <div>{mutation.data.topic}</div>
-        )}
+        <div>
+          <QAGeneration
+            isLoading={false}
+            label="Respostas"
+            result="afasdfasdfasdfasdf"
+            spoilerButton
+          />
+        </div>
       </div>
     </>
   );
