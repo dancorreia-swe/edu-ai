@@ -71,7 +71,7 @@ const Navbar = ({ children, labels }: NavbarProps) => {
         </NavigationMenu>
         <ModeToggle light={light} dark={dark} system={system} />
       </div>
-      {children}
+      <div className="container">{children}</div>
     </>
   );
 };
