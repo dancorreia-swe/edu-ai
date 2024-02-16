@@ -38,8 +38,8 @@ const cards = [
 const UseCaseSection = () => {
   return (
     <div id="useCaseSection">
-      <div className="relative mx-auto mt-32 max-w-6xl bg-slate-950 px-4 py-10 sm:px-2 lg:py-14 flex items-center flex-col">
-        <div className="flex flex-col items-center text-center mb-16">
+      <div className="relative mx-auto mt-32 flex max-w-6xl flex-col items-center bg-slate-950 px-4 py-10 sm:px-6 lg:py-14">
+        <div className="mb-16 flex flex-col items-center text-center">
           <h2 className="text-3xl font-extrabold text-white sm:text-5xl">
             Usos de caso
           </h2>

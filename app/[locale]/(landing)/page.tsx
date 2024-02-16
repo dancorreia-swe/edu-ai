@@ -15,6 +15,7 @@ type LandingHomeProps = {
 
 const LandingHome = ({ params: { locale } }: LandingHomeProps) => {
   unstable_setRequestLocale(locale);
+
   return (
     <>
       <Navbar />

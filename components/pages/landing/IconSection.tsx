@@ -18,24 +18,23 @@ const IconSection = () => {
         </p>
       </div>
       <div className="mt-16 grid items-center gap-12 sm:grid-cols-2 lg:grid-cols-3">
-        {/* Icon Block */}
         <IconCard
           icon={IconPencilQuestion}
           title="Perguntas e Respostas"
           description="Gere perguntas e respostas baseada no seu conteúdo e material de estudo"
         />
-        {/* Icon Block */}
         <IconCard
           icon={IconSparkles}
           title="Inteligência artificial"
           description="Tenha a sua disposição um sistema de inteligência artificial de última geração para gerar o conteúdo"
         />
-        {/* Icon Block */}
-        <IconCard
-          icon={IconScribble}
-          title="Ajuste em tempo real"
-          description="Ajuste e reajuste os seus questionamentos e auxílios até o seu ponto ideal"
-        />
+        <div className="col-span-3">
+          <IconCard
+            icon={IconScribble}
+            title="Ajuste em tempo real"
+            description="Ajuste e reajuste os seus questionamentos e auxílios até o seu ponto ideal"
+          />
+        </div>
       </div>
     </section>
   );
