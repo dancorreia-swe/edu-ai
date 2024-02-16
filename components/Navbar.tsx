@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { Link } from "@/navigation";
 import NavbarItem, { NavbarItemProps } from "./NavbarItem";
 import {
   IconMessageQuestion,
@@ -35,12 +35,12 @@ const Navbar = ({ children, labels }: NavbarProps) => {
       label: summarize,
     },
     {
-      href: "app/questions-and-answers",
+      href: "/app/questions-and-answers",
       icon: IconPencilQuestion,
       label: qaAnswer,
     },
     {
-      href: "app/chat",
+      href: "/app/chat",
       icon: IconMessageQuestion,
       label: chat,
     },
@@ -53,8 +53,9 @@ const Navbar = ({ children, labels }: NavbarProps) => {
         <NavigationMenu>
           <NavigationMenuList className="space-x-12">
             {navbarList.map(({ label, href, icon: Icon }) => (
-              <Link legacyBehavior href={href} key={href}>
+              <Link passHref href={href} key={href}>
                 <NavigationMenuLink
+                  asChild
                   className={cn(
                     "flex cursor-pointer items-center gap-2 rounded px-2 py-1 transition-colors hover:bg-violet-500/20",
                     pathname === href &&
@@ -62,8 +63,10 @@ const Navbar = ({ children, labels }: NavbarProps) => {
                   )}
                   active={pathname === href}
                 >
-                  {Icon && <Icon size={16} />}
-                  {label}
+                  <span>
+                    {Icon && <Icon size={16} />}
+                    {label}
+                  </span>
                 </NavigationMenuLink>
               </Link>
             ))}

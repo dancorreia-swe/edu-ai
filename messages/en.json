@@ -7,11 +7,20 @@
     "type_text": "Text",
     "type_file": "File"
   },
-  "Chat": {
+   "Chat": {
     "metadata-title":"Chat",
-    "metadata-description": "Chat with your file",
+    "metadata-description": "Talk with your chat",
     "title": "Chat",
-    "subtitle": "Chat with your file and see what you need"
+    "subtitle": "Talk with your document and resolve your needs"
+  },
+  "QA": {
+    "metadata-title": "Questions & Answers",
+    "metadata-description": "Ask questions and get answers from a document or a text.",
+    "title": "Questions & Answers",
+    "subtitle": "Ask questions and get answers from a document or a text.",
+    "topic_input_label": "Topic",
+    "topic_input_placeholder": "Enter a topic",
+    "topic_generate_button": "Generate"
   },
   "Navbar": {
     "summarize": "Summarize",

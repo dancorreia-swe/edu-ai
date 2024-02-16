@@ -23,8 +23,14 @@ const ChatContent = () => {
                 <h1 className="mt-2 mb-5 font-semibold text-center">
                   Preview
                 </h1>
-                {selectedFile && (
-                  <iframe src={URL.createObjectURL(selectedFile)} width="100%" height="500px" title="PDF Preview" />
+                {selectedFile ? (
+                  <div className="w-[28rem] mr-10">
+                  <iframe src={URL.createObjectURL(selectedFile)} width="100%" height="600px" title="PDF Preview" />
+                  </div>
+                ) : (
+                  <div>
+                    Loading bro
+                  </div>
                 )}
               </div>
               <div className="border-l -mt-7 border-dashed border-gray-700"></div>

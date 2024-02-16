@@ -12,6 +12,12 @@
     "subtitle": "Converse com seu chat e resolva suas necessidades"
   },
   
+  "QA": {
+    "metadata-title": "Perguntas e Respostas",
+    "metadata-description": "Obtenha perguntas e respostas sobre um texto ou tópico",
+    "title": "Perguntas e Respostas",
+    "subtitle": "Selecione um tema ou tópico e gere perguntas e respostas."
+  },
   "Navbar": {
     "summarize": "Sumarização",
     "qa-answer": "Perguntas e Respostas",
