@@ -4,11 +4,10 @@ import CtaButton from "./CtaButton";
 
 const Hero = () => {
   return (
-    <section className="relative">
+    <section className="relative" id="heroSection">
       <div className="bg-slate-950">
         <div className="relative bg-gradient-to-b from-violet-600/[.15] via-transparent pt-32">
           <div className="mx-auto max-w-[85rem] space-y-8 px-4 py-24 pb-60 sm:px-6 lg:px-8">
-            {/* Announcement Banner */}
             <div className="flex justify-center">
               <Link
                 className="group inline-block rounded-full border border-white/[.05] bg-white/[.05] p-1 pl-4 shadow-md hover:bg-white/[.1]"
