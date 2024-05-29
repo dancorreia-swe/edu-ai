@@ -5,7 +5,11 @@
     "title": "Summarize",
     "subtitle": "Summarize the content of a document or a text.",
     "type_text": "Text",
-    "type_file": "File"
+    "type_file": "File",
+    "send_button": "Summarize",
+    "copy_text": "Copy",
+    "summarize_placeholder": "Enter the text to summarize",
+    "summarize_content_header": "Summarized Content"
   },
   "Navbar": {
     "summarize": "Summarize",

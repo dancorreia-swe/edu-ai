@@ -1,20 +1,25 @@
 "use client";
-import { useTranslations } from "next-intl";
 import { Textarea } from "@/components/ui/textarea";
 import { SetStateAction, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import { IconClipboard } from "@tabler/icons-react";
+import type { i18nSummarizePage } from "@/app/[locale]/app/summarize/page";
 
-const SummarizeContent = ({ checked }: any) => {
+type Flatteni18nSummarizePage = {
+  [k in keyof i18nSummarizePage["content"]]: i18nSummarizePage["content"][k];
+};
+
+type SummarizeContentProps = {
+  checked: boolean;
+  i18n: Flatteni18nSummarizePage;
+};
+
+const SummarizeContent = ({ checked, i18n }: SummarizeContentProps) => {
+  const { actions, placeholder, content_header } = i18n;
   const [textareaValue, setTextareaValue] = useState("");
-  const handleTextareaChange = (event: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setTextareaValue(event.target.value);
-  };
+  const [isChecked, setIsChecked] = useState<boolean>(checked);
 
-  const [isChecked, setIsChecked] = useState<Boolean>(checked);
   useEffect(() => {
     setIsChecked(checked);
   }, [checked]);
@@ -25,12 +30,11 @@ const SummarizeContent = ({ checked }: any) => {
         {!isChecked ? (
           <div className="w-full">
             <Textarea
-              placeholder="Type your text to summarize"
-              onChange={handleTextareaChange}
+              placeholder={placeholder}
               className="dark:bg-slate-900/50"
             />
             <Button className="my-4 flex w-40 text-white dark:bg-slate-700 dark:hover:!bg-gray-600">
-              Send
+              {actions.sendButton}
             </Button>
           </div>
         ) : (
@@ -64,46 +68,14 @@ const SummarizeContent = ({ checked }: any) => {
       </div>
       <div className="mt-5">
         <div className="flex items-center justify-between">
-          <span className="text-md font-semibold">Conteúdo sumarizado</span>
+          <span className="text-md font-semibold">{content_header}</span>
           <div className="flex items-center space-x-2 rounded-md border p-2 text-sm">
             <IconClipboard size={16} />
-            <span>Copiar</span>
+            <span>{actions.copyButton}</span>
           </div>
         </div>
-        <div className="mt-4 rounded-md border p-4">
-          {textareaValue ? (
-            <div>
-              <p>
-                O texto descreve o Reino de França no início do século XIV,
-                destacando sua população, extensão territorial e estrutura
-                social. Com uma população de 16 a 17 milhões de habitantes, a
-                França era a principal potência demográfica da Europa. O
-                território se estendia do Escalda aos Pirenéus e do Oceano
-                Atlântico ao Ródano, Saône e Meuse, cobrindo aproximadamente
-                424.000 km².
-                <br /> <br />O texto aborda a organização da sociedade,
-                mencionando diferenças entre o Norte e o Sul em termos de
-                linguagem, cultura e independência em relação ao rei. Destaca-se
-                o papel significativo do clero na sociedade, com clérigos
-                administrando instituições e promovendo instituições de caridade
-                e educação. A nobreza, por sua vez, é descrita como responsável
-                por combinar riqueza, poder e bravura no campo de batalha. A
-                guerra torna-se lucrativa, com a cavalaria pesada sendo
-                estruturada para lutas heroicas.
-                <br /> <br /> Os Capetianos, para consolidar seu poder, fizeram
-                promessas ao povo, como a criação de cidades livres e os Estados
-                Gerais. No entanto, às vésperas da Guerra dos Cem Anos, o
-                sistema enfrentou desafios devido ao crescimento demográfico,
-                superpopulação rural e exigências de autonomia nas cidades.
-                Apesar dos sucessos territoriais, os reis de Inglaterra
-                mantiveram a Guiana e o condado de Ponthieu, tornando o rei de
-                Inglaterra vassalo do rei de França.
-              </p>
-            </div>
-          ) : (
-            <div>Nothing here</div>
-          )}
-        </div>
+          
+        <div className="mt-4 rounded-md border p-4"></div>
       </div>
     </>
   );

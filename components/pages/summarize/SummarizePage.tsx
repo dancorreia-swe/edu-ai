@@ -11,6 +11,7 @@ type SummarizePageProps = {
 const SummarizePage = ({ i18n }: SummarizePageProps) => {
   const { title, subtitle } = i18n.header;
   const { text, file } = i18n.type;
+
   const [isChecked, setIsChecked] = useState(false);
 
   return (
@@ -23,7 +24,7 @@ const SummarizePage = ({ i18n }: SummarizePageProps) => {
               {subtitle}
             </span>
           </div>
-          <div className=" flex justify-end space-x-4 self-end">
+          <div className="flex justify-end space-x-4 self-end">
             <span
               className={`${
                 isChecked ? "text-slate-500" : "dark:text-gray-200"
@@ -45,7 +46,7 @@ const SummarizePage = ({ i18n }: SummarizePageProps) => {
           </div>
         </div>
       </div>
-      <SummarizeContent checked={isChecked} />
+      <SummarizeContent checked={isChecked} i18n={i18n.content} />
     </>
   );
 };

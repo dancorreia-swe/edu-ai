@@ -5,7 +5,10 @@
     "title": "Sumarização",
     "subtitle": "Sumarize o conteúdo de um documento ou de um texto.",
     "type_text": "Texto",
-    "type_file": "Arquivo"
+    "type_file": "Arquivo",
+    "send_button": "Sumarizar",
+    "copy_text": "Copiar",
+    "summarize_placeholder": "Insira o texto que deseja sumarizar"
   },
   "Navbar": {
     "summarize": "Sumarização",
