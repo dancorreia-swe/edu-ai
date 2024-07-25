@@ -8,6 +8,7 @@
     "type_file": "Arquivo",
     "send_button": "Sumarizar",
     "copy_text": "Copiar",
+    "loading_button": "Sumarizando...",
     "summarize_placeholder": "Insira o texto que deseja sumarizar"
   },
   "Navbar": {

@@ -1,10 +1,11 @@
 "use client";
-import { Textarea } from "@/components/ui/textarea";
-import { SetStateAction, useState } from "react";
+import { useState, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { useEffect } from "react";
-import { IconClipboard } from "@tabler/icons-react";
+import { trpc } from "@/app/_trpc/client";
+import { Textarea } from "@/components/ui/textarea";
+import { IconCheck, IconClipboard } from "@tabler/icons-react";
 import type { i18nSummarizePage } from "@/app/[locale]/app/summarize/page";
+import { cn } from "@/lib/utils";
 
 type Flatteni18nSummarizePage = {
   [k in keyof i18nSummarizePage["content"]]: i18nSummarizePage["content"][k];
@@ -16,13 +17,32 @@ type SummarizeContentProps = {
 };
 
 const SummarizeContent = ({ checked, i18n }: SummarizeContentProps) => {
+  const textAreaRef = useRef<HTMLTextAreaElement>(null);
   const { actions, placeholder, content_header } = i18n;
-  const [textareaValue, setTextareaValue] = useState("");
+  const [textareaValue, setTextareaValue] = useState<string>("");
   const [isChecked, setIsChecked] = useState<boolean>(checked);
+  const [copied, setCopied] = useState<boolean>(false);
+  const summarizeMutation = trpc.summarize.useMutation();
 
-  useEffect(() => {
-    setIsChecked(checked);
-  }, [checked]);
+  const handleSummarize = async () => {
+    if (textAreaRef.current) {
+      const text = textAreaRef.current.value;
+
+      try {
+        const summedContent = await summarizeMutation.mutateAsync({ text });
+        setTextareaValue(summedContent.content as string);
+      } catch (error) {}
+    }
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(textareaValue);
+    setCopied(true);
+
+    setTimeout(() => {
+      setCopied(false);
+    }, 1500);
+  };
 
   return (
     <>
@@ -32,9 +52,27 @@ const SummarizeContent = ({ checked, i18n }: SummarizeContentProps) => {
             <Textarea
               placeholder={placeholder}
               className="dark:bg-slate-900/50"
+              ref={textAreaRef}
             />
-            <Button className="my-4 flex w-40 text-white dark:bg-slate-700 dark:hover:!bg-gray-600">
-              {actions.sendButton}
+            <Button
+              className="my-4 flex w-40 gap-x-2 text-white dark:bg-slate-700 dark:hover:!bg-gray-600"
+              onClick={handleSummarize}
+              disabled={summarizeMutation.isLoading}
+            >
+              {summarizeMutation.isLoading ? (
+                <>
+                  <div
+                    className="inline-block size-3 animate-spin rounded-full border-[3px] border-current border-t-transparent text-white dark:text-white"
+                    role="status"
+                    aria-label="loading"
+                  >
+                    <span className="sr-only">Loading...</span>
+                  </div>
+                  {actions.loadingButton}
+                </>
+              ) : (
+                actions.sendButton
+              )}
             </Button>
           </div>
         ) : (
@@ -69,13 +107,26 @@ const SummarizeContent = ({ checked, i18n }: SummarizeContentProps) => {
       <div className="mt-5">
         <div className="flex items-center justify-between">
           <span className="text-md font-semibold">{content_header}</span>
-          <div className="flex items-center space-x-2 rounded-md border p-2 text-sm">
-            <IconClipboard size={16} />
-            <span>{actions.copyButton}</span>
+          <div className="flex items-center gap-x-2">
+            {copied && <IconCheck className="text-green-500" size={20} />}
+            <Button
+              className={cn(
+                "flex items-center space-x-2 rounded-md border p-2 text-sm transition-colors",
+                copied &&
+                  "hover:border-green-500 hover:bg-green-300 hover:text-green-800",
+              )}
+              variant={"outline"}
+              onClick={handleCopy}
+              disabled={!textareaValue}
+            >
+              <IconClipboard size={16} />
+              <span>{actions.copyButton}</span>
+            </Button>
           </div>
         </div>
-          
-        <div className="mt-4 rounded-md border p-4"></div>
+        <div className="mt-4 rounded-md border p-4">
+          {textareaValue || "No content"}
+        </div>
       </div>
     </>
   );

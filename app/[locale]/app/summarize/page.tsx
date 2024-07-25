@@ -27,6 +27,7 @@ export type i18nSummarizePage = {
     actions: {
       sendButton: string;
       copyButton: string;
+      loadingButton: string;
     };
     placeholder: string;
     content_header: string;
@@ -50,6 +51,7 @@ const SummarizePageServer = ({ params: { locale } }: any) => {
       actions: {
         sendButton: t("send_button"),
         copyButton: t("copy_text"),
+        loadingButton: t("loading_button"),
       },
       placeholder: t("summarize_placeholder"),
       content_header: t("summarize_content_header"),
