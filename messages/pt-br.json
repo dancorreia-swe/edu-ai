@@ -3,7 +3,13 @@
     "metadata-title": "Sumarização",
     "metadata-description": "Sumarize o conteúdo de um documento ou de um texto.",
     "title": "Sumarização",
-    "subtitle": "Sumarize o conteúdo de um documento ou de um texto."
+    "subtitle": "Sumarize o conteúdo de um documento ou de um texto.",
+    "type_text": "Texto",
+    "type_file": "Arquivo",
+    "send_button": "Sumarizar",
+    "copy_text": "Copiar",
+    "loading_button": "Sumarizando...",
+    "summarize_placeholder": "Insira o texto que deseja sumarizar"
   },
   "QA": {
     "metadata-title": "Perguntas e Respostas",

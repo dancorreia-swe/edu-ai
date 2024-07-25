@@ -21,8 +21,17 @@ export type i18nSummarizePage = {
   };
   type: {
     text: string;
-    file: string
-  }
+    file: string;
+  };
+  content: {
+    actions: {
+      sendButton: string;
+      copyButton: string;
+      loadingButton: string;
+    };
+    placeholder: string;
+    content_header: string;
+  };
 };
 
 const SummarizePageServer = ({ params: { locale } }: any) => {
@@ -36,8 +45,17 @@ const SummarizePageServer = ({ params: { locale } }: any) => {
     },
     type: {
       text: t("type_text"),
-      file: t("type_file")
-    }
+      file: t("type_file"),
+    },
+    content: {
+      actions: {
+        sendButton: t("send_button"),
+        copyButton: t("copy_text"),
+        loadingButton: t("loading_button"),
+      },
+      placeholder: t("summarize_placeholder"),
+      content_header: t("summarize_content_header"),
+    },
   } as i18nSummarizePage;
 
   return <SummarizePage i18n={i18n} />;
