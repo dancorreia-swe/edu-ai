@@ -5,7 +5,12 @@
     "title": "Summarize",
     "subtitle": "Summarize the content of a document or a text.",
     "type_text": "Text",
-    "type_file": "File"
+    "type_file": "File",
+    "send_button": "Summarize",
+    "loading_button": "Summarizing...",
+    "copy_text": "Copy",
+    "summarize_placeholder": "Enter the text to summarize",
+    "summarize_content_header": "Summarized Content"
   },
   "QA": {
     "metadata-title": "Questions & Answers",
