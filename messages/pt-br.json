@@ -9,7 +9,8 @@
     "send_button": "Sumarizar",
     "copy_text": "Copiar",
     "loading_button": "Sumarizando...",
-    "summarize_placeholder": "Insira o texto que deseja sumarizar"
+    "summarize_placeholder": "Insira o texto que deseja sumarizar",
+    "summarize_content_header": "Conteúdo sumarizado"
   },
   "QA": {
     "metadata-title": "Perguntas e Respostas",
