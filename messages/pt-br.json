@@ -16,7 +16,11 @@
     "metadata-title": "Perguntas e Respostas",
     "metadata-description": "Obtenha perguntas e respostas sobre um texto ou tópico",
     "title": "Perguntas e Respostas",
-    "subtitle": "Selecione um tema ou tópico e gere perguntas e respostas."
+    "subtitle": "Selecione um tema ou tópico e gere perguntas e respostas.",
+    "topic_input_label": "Tópico",
+    "topic_input_placeholder": "Insira o tópico ou tema",
+    "topic_generate_button": "Gerar perguntas",
+    "topic_generate_button_loading": "Gerando perguntas..."
   },
   "Navbar": {
     "summarize": "Sumarização",

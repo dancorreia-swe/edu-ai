@@ -25,6 +25,7 @@ export type i18nQAPage = {
       label: string;
       placeholder: string;
       button: string;
+      buttonLoading: string;
     };
   };
 };
@@ -43,6 +44,7 @@ const QaPageServer = ({ params: { locale } }: any) => {
         label: t("topic_input_label"),
         placeholder: t("topic_input_placeholder"),
         button: t("topic_generate_button"),
+        buttonLoading: t("topic_generate_button_loading"),
       },
     },
   } satisfies i18nQAPage as i18nQAPage;
