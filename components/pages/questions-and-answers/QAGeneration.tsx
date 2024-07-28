@@ -1,28 +1,17 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
-import { use, useEffect, useState } from "react";
+import { useState } from "react";
 
 type QAGenerationProps = {
   label: string;
   result?: string;
-  isLoading: boolean;
   spoilerButton?: boolean;
 };
 
-const QAGeneration = ({
-  label,
-  result,
-  isLoading,
-  spoilerButton,
-}: QAGenerationProps) => {
+const QAGeneration = ({ label, result, spoilerButton }: QAGenerationProps) => {
   const [spoiler, setSpoiler] = useState<boolean>(true as boolean);
-
-  if (isLoading) {
-    return <Skeleton className="h-[400px] w-full dark:bg-slate-700" />;
-  }
 
   return (
     <>
@@ -43,7 +32,7 @@ const QAGeneration = ({
         )}
       >
         <p
-          className={`${spoiler && spoilerButton && "blur-md"} transition-all`}
+          className={`${spoiler && spoilerButton && "blur-md"} whitespace-pre-wrap break-words transition-all`}
         >
           {result ?? "Sem resultado"}
         </p>

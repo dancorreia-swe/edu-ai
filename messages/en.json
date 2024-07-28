@@ -14,12 +14,13 @@
   },
   "QA": {
     "metadata-title": "Questions & Answers",
-    "metadata-description": "Ask questions and get answers from a document or a text.",
+    "metadata-description": "Ask questions and get answers from a text or topic.",
     "title": "Questions & Answers",
-    "subtitle": "Ask questions and get answers from a document or a text.",
+    "subtitle": "Ask questions and get answers from a text or topic.",
     "topic_input_label": "Topic",
     "topic_input_placeholder": "Enter a topic",
-    "topic_generate_button": "Generate"
+    "topic_generate_button": "Generate",
+    "topic_generate_button_loading": "Generating..."
   },
   "Navbar": {
     "summarize": "Summarize",

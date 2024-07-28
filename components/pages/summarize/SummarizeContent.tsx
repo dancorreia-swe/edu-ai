@@ -31,7 +31,9 @@ const SummarizeContent = ({ checked, i18n }: SummarizeContentProps) => {
       try {
         const summedContent = await summarizeMutation.mutateAsync({ text });
         setTextareaValue(summedContent.content as string);
-      } catch (error) {}
+      } catch (error) {
+
+      }
     }
   };
 
