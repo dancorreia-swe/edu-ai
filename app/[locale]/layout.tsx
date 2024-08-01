@@ -2,9 +2,9 @@ import Providers from "@/components/Providers";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../globals.css";
-import { Toaster } from "sonner";
 import { locales } from "@/config";
 import { unstable_setRequestLocale } from "next-intl/server";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 

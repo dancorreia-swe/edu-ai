@@ -6,6 +6,9 @@ import { publicProcedure, router } from "./trpc";
 import { ChatOpenAI } from "@langchain/openai";
 import { z } from "zod";
 
+const MAX_FILE_SIZE = 5000000;
+const ACCEPTED_FILE_TYPES = ["application/pdf"];
+
 export const appRouter = router({
   summarize: publicProcedure
     .input(z.object({ text: z.string() }))
@@ -78,6 +81,23 @@ Below you find the subject and text to summarize:
       const result = await composedChain.invoke({ text: input.text });
 
       return { questions: chainResult, answers: result };
+    }),
+  chatPDF: publicProcedure
+    .input(
+      z
+        .any()
+        .refine((file) => file?.size <= MAX_FILE_SIZE, "File size is too large")
+        .refine(
+          (file) => ACCEPTED_FILE_TYPES.includes(file?.type),
+          "File type is not accepted",
+        ),
+    )
+    .mutation(async (opts) => {
+      const { input } = opts;
+      const llmChat = new ChatOpenAI({
+        temperature: 0.7,
+      });
+      const chatTemplate = ``;
     }),
 });
 

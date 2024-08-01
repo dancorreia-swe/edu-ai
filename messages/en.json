@@ -12,11 +12,19 @@
     "summarize_placeholder": "Enter the text to summarize",
     "summarize_content_header": "Summarized Content"
   },
-   "Chat": {
-    "metadata-title":"Chat",
+  "Chat": {
+    "metadata-title": "Chat",
     "metadata-description": "Talk with your chat",
     "title": "Chat",
-    "subtitle": "Talk with your document and resolve your needs"
+    "subtitle": "Talk with your document and resolve your needs",
+    "uploadthing": {
+      "button_loading": "Getting things ready...",
+      "button_ready": "Upload",
+      "label": "Choose files or drag them here",
+      "label_loading": "Loading...",
+      "content_loading": "Checking file types allowed...",
+      "content_uploading": "Uploading file..."
+    }
   },
   "QA": {
     "metadata-title": "Questions & Answers",
