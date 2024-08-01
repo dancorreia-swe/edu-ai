@@ -29,7 +29,7 @@ enum Author {
   AI = "ai",
 }
 
-const ChatSection = ({ file }: { file: PDFFile }) => {
+const ChatSection = ({ file, i18n }: { file: PDFFile } & ChatSectionProps) => {
   const [messages, setMessages] = useLocalStorage<Message[]>("messages", []);
   const [loading, setLoading] = useState<boolean>(false);
   const chatMutation = trpc.chatWithAI.useMutation();
@@ -62,8 +62,8 @@ const ChatSection = ({ file }: { file: PDFFile }) => {
       setMessages((prev) => [...prev, aiMessage]);
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to send message",
+        title: i18n.toast.error_send_message_title,
+        description: i18n.toast.error_send_message_description,
       });
     } finally {
       setLoading(false);
@@ -108,13 +108,7 @@ const DropzoneSection = ({
       onClientUploadComplete={onUploadComplete}
       onUploadError={onError}
       content={{
-        button: ({
-          ready,
-          isUploading,
-          uploadProgress,
-          fileTypes,
-          isDragActive,
-        }) => {
+        button: ({ ready, isUploading, uploadProgress, fileTypes }) => {
           if (isUploading) {
             return (
               <>
@@ -163,12 +157,7 @@ const ChatContent = ({ i18n }: ChatSectionProps) => {
   const handleUploadComplete = async (res: any) => {
     const formData = new FormData();
 
-    if (!fileRef.current) {
-      console.log("No file selected");
-      return;
-    }
-
-    formData.append("file", fileRef.current);
+    formData.append("file", fileRef.current!);
     formData.append("key", res[0].key);
 
     try {
@@ -179,8 +168,8 @@ const ChatContent = ({ i18n }: ChatSectionProps) => {
 
       if (!vectorRes.ok) {
         toast({
-          title: "Error",
-          description: "Failed to upload file",
+          title: i18n.toast.error_upload_file_title,
+          description: i18n.toast.error_upload_file_description,
         });
 
         return;
@@ -196,8 +185,8 @@ const ChatContent = ({ i18n }: ChatSectionProps) => {
   const handleBeforeUploadBegin = (files: any) => {
     if (files.length > 1) {
       toast({
-        title: "More than one file",
-        description: "You can only upload one file at a time",
+        title: i18n.toast.error_file_length_title,
+        description: i18n.toast.error_file_length_description,
       });
 
       return;
@@ -221,7 +210,7 @@ const ChatContent = ({ i18n }: ChatSectionProps) => {
       <div className="mt-3 w-full">
         {dropped ? (
           <>
-            <ChatSection file={selectedFile} />
+            <ChatSection file={selectedFile} i18n={i18n} />
           </>
         ) : (
           <DropzoneSection

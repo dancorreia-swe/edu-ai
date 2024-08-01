@@ -46,11 +46,10 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
             title: (
               <div className="flex items-center">
                 <IconX size={20} className="mr-2 text-red-500" />
-                <span>Failed to reset the chat</span>
+                <span>{i18n.toast.error_title}</span>
               </div>
             ),
-            description:
-              "It wasn't possible to reset your file and chat, please try again soon",
+            description: i18n.toast.error_description,
           });
 
           return;
@@ -63,11 +62,10 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
           title: (
             <div className="flex items-center">
               <IconCheck size={20} className="mr-2 text-green-500" />
-              <span>Chat reseted successfully</span>
+              <span>{i18n.toast.success_title}</span>
             </div>
           ),
-          description:
-            "The file and chat history were cleared, you can start a new one",
+          description: i18n.toast.success_description,
         });
 
         resetDropped();
@@ -76,11 +74,10 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
           title: (
             <div className="flex items-center">
               <IconX size={20} className="mr-2 text-red-500" />
-              <span>Failed to reset the chat</span>
+              <span>{i18n.toast.error_title}</span>
             </div>
           ),
-          description:
-            "It wasn't possible to reset your file and chat, please try again soon",
+          description: i18n.toast.error_description,
         });
       } finally {
         setOpen(false);

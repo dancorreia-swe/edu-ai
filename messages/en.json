@@ -29,7 +29,19 @@
     "reset_title": "Are you sure you want to reset the chat of this document?",
     "reset_description": "This action will remove all messages from the chat.",
     "reset_confirm": "Yes, start a new chat",
-    "reset_cancel": "Cancel"
+    "reset_cancel": "Cancel",
+    "toast": {
+      "success_title": "Chat reset successfully",
+      "success_description": "The file and chat history were cleread you can start a new one",
+      "error_title": "Error resetting chat",
+      "error_description": "An error occurred while trying to reset the chat, please try again later",
+      "error_file_length_title": "You can only upload one file at a time",
+      "error_file_length_description": "Upload only one file at a time to chat",
+      "error_upload_file_title": "Error uploading file",
+      "error_upload_file_description": "An error occurred while trying to upload the file, please try again later",
+      "error_send_message_title": "Error sending message",
+      "error_send_message_description": "An error occurred while trying to send the message, please try again later"
+    }
   },
   "QA": {
     "metadata-title": "Questions & Answers",
