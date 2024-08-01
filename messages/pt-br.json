@@ -12,6 +12,25 @@
     "summarize_placeholder": "Insira o texto que deseja sumarizar",
     "summarize_content_header": "Conteúdo sumarizado"
   },
+  "Chat": {
+    "metadata-title": "Chat",
+    "metadata-description": "Converse com seu chat",
+    "title": "Chat",
+    "subtitle": "Converse com seu documento e responda perguntas.",
+    "uploadthing": {
+      "button_loading": "Aguarde...",
+      "button_ready": "Enviar",
+      "label": "Escolha um arquivo ou arraste e solte aqui",
+      "label_loading": "Carregando...",
+      "content_loading": "Verificando tipos de arquivo permitidos...",
+      "content_uploading": "Enviando arquivo..."
+    },
+    "reset_button": "Novo chat",
+    "reset_title": "Você tem certeza que deseja iniciar um novo chat?",
+    "reset_description": "Essa ação irá apagar todo o histórico de conversa.",
+    "reset_confirm": "Sim, iniciar novo chat",
+    "reset_cancel": "Cancelar"
+  },
   "QA": {
     "metadata-title": "Perguntas e Respostas",
     "metadata-description": "Obtenha perguntas e respostas sobre um texto ou tópico",
@@ -27,6 +46,7 @@
     "qa-answer": "Perguntas e Respostas",
     "chat": "Chat"
   },
+
   "Theme": {
     "light": "Claro",
     "dark": "Escuro",

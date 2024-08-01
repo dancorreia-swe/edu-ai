@@ -6,6 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { IconCheck, IconClipboard } from "@tabler/icons-react";
 import type { i18nSummarizePage } from "@/app/[locale]/app/summarize/page";
 import { cn } from "@/lib/utils";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Flatteni18nSummarizePage = {
   [k in keyof i18nSummarizePage["content"]]: i18nSummarizePage["content"][k];
@@ -31,9 +32,7 @@ const SummarizeContent = ({ checked, i18n }: SummarizeContentProps) => {
       try {
         const summedContent = await summarizeMutation.mutateAsync({ text });
         setTextareaValue(summedContent.content as string);
-      } catch (error) {
-
-      }
+      } catch (error) {}
     }
   };
 
@@ -106,30 +105,35 @@ const SummarizeContent = ({ checked, i18n }: SummarizeContentProps) => {
           </label>
         )}
       </div>
-      <div className="mt-5">
-        <div className="flex items-center justify-between">
-          <span className="text-md font-semibold">{content_header}</span>
-          <div className="flex items-center gap-x-2">
-            {copied && <IconCheck className="text-green-500" size={20} />}
-            <Button
-              className={cn(
-                "flex items-center space-x-2 rounded-md border p-2 text-sm transition-colors",
-                copied &&
-                  "hover:border-green-500 hover:bg-green-300 hover:text-green-800",
-              )}
-              variant={"outline"}
-              onClick={handleCopy}
-              disabled={!textareaValue}
-            >
-              <IconClipboard size={16} />
-              <span>{actions.copyButton}</span>
-            </Button>
+      {summarizeMutation.isLoading && !textareaValue && (
+        <Skeleton className="mt-5 h-80 w-full dark:bg-slate-800" />
+      )}
+      {textareaValue && (
+        <div className="mt-5">
+          <div className="flex items-center justify-between">
+            <span className="text-md font-semibold">{content_header}</span>
+            <div className="flex items-center gap-x-2">
+              {copied && <IconCheck className="text-green-500" size={20} />}
+              <Button
+                className={cn(
+                  "flex items-center space-x-2 rounded-md border p-2 text-sm transition-colors",
+                  copied &&
+                    "hover:border-green-500 hover:bg-green-300 hover:text-green-800",
+                )}
+                variant={"outline"}
+                onClick={handleCopy}
+                disabled={!textareaValue}
+              >
+                <IconClipboard size={16} />
+                <span>{actions.copyButton}</span>
+              </Button>
+            </div>
+          </div>
+          <div className="mt-4 rounded-md border p-4">
+            {textareaValue || "No content"}
           </div>
         </div>
-        <div className="mt-4 rounded-md border p-4">
-          {textareaValue || "No content"}
-        </div>
-      </div>
+      )}
     </>
   );
 };
