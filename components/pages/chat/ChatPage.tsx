@@ -31,6 +31,7 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
   const handleReset = async () => {
     if (typeof window !== "undefined") {
       setLoading(true);
+
       try {
         const fileId =
           window.localStorage.getItem("file") &&
@@ -49,8 +50,9 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
               </div>
             ),
             description:
-              "It wasn't possible to reset your file, please try again soon",
+              "It wasn't possible to reset your file and chat, please try again soon",
           });
+
           return;
         }
 
@@ -65,7 +67,7 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
             </div>
           ),
           description:
-            "Everything was removed from the chat, you can start a new one",
+            "The file and chat history were cleared, you can start a new one",
         });
 
         resetDropped();
@@ -78,7 +80,7 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
             </div>
           ),
           description:
-            "It wasn't possible to reset your file, please try again soon",
+            "It wasn't possible to reset your file and chat, please try again soon",
         });
       } finally {
         setOpen(false);
@@ -122,7 +124,7 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
                   Reset Chat
                   {loading && (
                     <div
-                      className="ml-2 inline-block size-3 animate-spin rounded-full border-[3px] border-current border-t-transparent text-neutral-900 dark:text-slate-900"
+                      className="ml-2 inline-block size-3 animate-spin rounded-full border-[3px] border-current border-t-transparent text-white dark:text-slate-900"
                       role="status"
                       aria-label="loading"
                     >

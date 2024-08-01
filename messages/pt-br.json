@@ -18,7 +18,7 @@
     "title": "Chat",
     "subtitle": "Converse com seu documento e responda perguntas.",
     "uploadthing": {
-      "button_loading": "Carregando...",
+      "button_loading": "Aguarde...",
       "button_ready": "Enviar",
       "label": "Escolha um arquivo ou arraste e solte aqui",
       "label_loading": "Carregando...",
