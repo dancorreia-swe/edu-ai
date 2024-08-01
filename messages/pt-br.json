@@ -1,0 +1,55 @@
+{
+  "Summarize": {
+    "metadata-title": "Sumarização",
+    "metadata-description": "Sumarize o conteúdo de um documento ou de um texto.",
+    "title": "Sumarização",
+    "subtitle": "Sumarize o conteúdo de um documento ou de um texto.",
+    "type_text": "Texto",
+    "type_file": "Arquivo",
+    "send_button": "Sumarizar",
+    "copy_text": "Copiar",
+    "loading_button": "Sumarizando...",
+    "summarize_placeholder": "Insira o texto que deseja sumarizar",
+    "summarize_content_header": "Conteúdo sumarizado"
+  },
+  "Chat": {
+    "metadata-title": "Chat",
+    "metadata-description": "Converse com seu chat",
+    "title": "Chat",
+    "subtitle": "Converse com seu documento e responda perguntas.",
+    "uploadthing": {
+      "button_loading": "Aguarde...",
+      "button_ready": "Enviar",
+      "label": "Escolha um arquivo ou arraste e solte aqui",
+      "label_loading": "Carregando...",
+      "content_loading": "Verificando tipos de arquivo permitidos...",
+      "content_uploading": "Enviando arquivo..."
+    },
+    "reset_button": "Novo chat",
+    "reset_title": "Você tem certeza que deseja iniciar um novo chat?",
+    "reset_description": "Essa ação irá apagar todo o histórico de conversa.",
+    "reset_confirm": "Sim, iniciar novo chat",
+    "reset_cancel": "Cancelar"
+  },
+  "QA": {
+    "metadata-title": "Perguntas e Respostas",
+    "metadata-description": "Obtenha perguntas e respostas sobre um texto ou tópico",
+    "title": "Perguntas e Respostas",
+    "subtitle": "Selecione um tema ou tópico e gere perguntas e respostas.",
+    "topic_input_label": "Tópico",
+    "topic_input_placeholder": "Insira o tópico ou tema",
+    "topic_generate_button": "Gerar perguntas",
+    "topic_generate_button_loading": "Gerando perguntas..."
+  },
+  "Navbar": {
+    "summarize": "Sumarização",
+    "qa-answer": "Perguntas e Respostas",
+    "chat": "Chat"
+  },
+
+  "Theme": {
+    "light": "Claro",
+    "dark": "Escuro",
+    "system": "Sistema"
+  }
+}

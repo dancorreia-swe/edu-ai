@@ -1,0 +1,66 @@
+{
+  "Summarize": {
+    "metadata-title": "Summarize",
+    "metadata-description": "Summarize the content of a document or a text.",
+    "title": "Summarize",
+    "subtitle": "Summarize the content of a document or a text.",
+    "type_text": "Text",
+    "type_file": "File",
+    "send_button": "Summarize",
+    "loading_button": "Summarizing...",
+    "copy_text": "Copy",
+    "summarize_placeholder": "Enter the text to summarize",
+    "summarize_content_header": "Summarized Content"
+  },
+  "Chat": {
+    "metadata-title": "Chat",
+    "metadata-description": "Talk with your chat",
+    "title": "Chat",
+    "subtitle": "Talk with your document and resolve your needs",
+    "uploadthing": {
+      "button_loading": "Loading...",
+      "button_ready": "Upload",
+      "label": "Choose files or drag them here",
+      "label_loading": "Getting things ready...",
+      "content_loading": "Checking file types allowed...",
+      "content_uploading": "Uploading file..."
+    },
+    "reset_button": "New Chat",
+    "reset_title": "Are you sure you want to reset the chat of this document?",
+    "reset_description": "This action will remove all messages from the chat.",
+    "reset_confirm": "Yes, start a new chat",
+    "reset_cancel": "Cancel",
+    "toast": {
+      "success_title": "Chat reset successfully",
+      "success_description": "The file and chat history were cleread you can start a new one",
+      "error_title": "Error resetting chat",
+      "error_description": "An error occurred while trying to reset the chat, please try again later",
+      "error_file_length_title": "You can only upload one file at a time",
+      "error_file_length_description": "Upload only one file at a time to chat",
+      "error_upload_file_title": "Error uploading file",
+      "error_upload_file_description": "An error occurred while trying to upload the file, please try again later",
+      "error_send_message_title": "Error sending message",
+      "error_send_message_description": "An error occurred while trying to send the message, please try again later"
+    }
+  },
+  "QA": {
+    "metadata-title": "Questions & Answers",
+    "metadata-description": "Ask questions and get answers from a text or topic.",
+    "title": "Questions & Answers",
+    "subtitle": "Ask questions and get answers from a text or topic.",
+    "topic_input_label": "Topic",
+    "topic_input_placeholder": "Enter a topic",
+    "topic_generate_button": "Generate",
+    "topic_generate_button_loading": "Generating..."
+  },
+  "Navbar": {
+    "summarize": "Summarize",
+    "qa-answer": "Questions & Answers",
+    "chat": "Chat"
+  },
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}
