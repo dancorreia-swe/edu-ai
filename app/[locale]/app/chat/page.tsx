@@ -28,6 +28,13 @@ export type i18nChatPage = {
     content_loading: string;
     content_uploading: string;
   };
+  reset: {
+    button: string;
+    dialog_title: string;
+    dialog_description: string;
+    dialog_confirm: string;
+    dialog_cancel: string;
+  };
 };
 
 const ChatPageServer = ({ params: { locale } }: any) => {
@@ -46,6 +53,13 @@ const ChatPageServer = ({ params: { locale } }: any) => {
       label_loading: t("uploadthing.label_loading"),
       content_loading: t("uploadthing.content_loading"),
       content_uploading: t("uploadthing.content_uploading"),
+    },
+    reset: {
+      button: t("reset_button"),
+      dialog_title: t("reset_title"),
+      dialog_description: t("reset_description"),
+      dialog_confirm: t("reset_confirm"),
+      dialog_cancel: t("reset_cancel"),
     },
   } satisfies i18nChatPage;
 

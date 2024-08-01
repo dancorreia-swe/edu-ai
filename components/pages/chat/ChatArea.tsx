@@ -1,5 +1,6 @@
 import ChatBubble from "./ChatBubble";
 import { Message } from "./ChatContent";
+import ChatLoading from "./ChatLoading";
 import ChatPlaceholder from "./ChatPlaceholder";
 
 type ChatAreaProps = {
@@ -9,12 +10,15 @@ type ChatAreaProps = {
 
 const ChatArea = ({ messages, loading }: ChatAreaProps) => {
   return (
-    <main className="h-0 flex-auto overflow-auto">
-      {!messages.length && <ChatPlaceholder />}
-      {messages.map((message) => (
-        <ChatBubble key={message.id} message={message} />
-      ))}
-    </main>
+    <>
+      <main className="h-0 flex-auto overflow-auto">
+        {!messages.length && <ChatPlaceholder />}
+        {messages.map((message) => (
+          <ChatBubble key={message.id} message={message} />
+        ))}
+      </main>
+      {loading && <ChatLoading />}
+    </>
   );
 };
 

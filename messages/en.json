@@ -24,7 +24,12 @@
       "label_loading": "Getting things ready...",
       "content_loading": "Checking file types allowed...",
       "content_uploading": "Uploading file..."
-    }
+    },
+    "reset_button": "New Chat",
+    "reset_title": "Are you sure you want to reset the chat of this document?",
+    "reset_description": "This action will remove all messages from the chat.",
+    "reset_confirm": "Yes, start a new chat",
+    "reset_cancel": "Cancel"
   },
   "QA": {
     "metadata-title": "Questions & Answers",

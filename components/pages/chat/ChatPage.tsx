@@ -101,27 +101,25 @@ const ChatPage = ({ i18n }: ChatPageProps) => {
         {dropped && (
           <Dialog open={open} onOpenChange={setOpen}>
             <DialogTrigger asChild>
-              <Button size={"sm"}>Novo documento</Button>
+              <Button size={"sm"}>{i18n.reset.button}</Button>
             </DialogTrigger>
             <DialogContent>
               <DialogHeader>
-                <DialogTitle>
-                  Are you sure you want to reset the chat of this document?
-                </DialogTitle>
+                <DialogTitle>{i18n.reset.dialog_title}</DialogTitle>
                 <DialogDescription>
-                  This action will remove all messages from the chat.
+                  {i18n.reset.dialog_description}
                 </DialogDescription>
               </DialogHeader>
               <DialogFooter>
                 <Button variant="secondary" onClick={() => setOpen(false)}>
-                  Cancel
+                  {i18n.reset.dialog_cancel}
                 </Button>
                 <Button
                   variant={"default"}
                   onClick={handleReset}
                   disabled={loading}
                 >
-                  Reset Chat
+                  {i18n.reset.dialog_confirm}
                   {loading && (
                     <div
                       className="ml-2 inline-block size-3 animate-spin rounded-full border-[3px] border-current border-t-transparent text-white dark:text-slate-900"

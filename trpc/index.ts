@@ -1,12 +1,17 @@
+import { createClient } from "redis";
+import { PDFLoader } from "@langchain/community/document_loaders/fs/pdf";
 import { RunnableSequence } from "@langchain/core/runnables";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import { PromptTemplate } from "@langchain/core/prompts";
+import { createStuffDocumentsChain } from "langchain/chains/combine_documents";
+import { createRetrievalChain } from "langchain/chains/retrieval";
 import { publicProcedure, router } from "./trpc";
-import { ChatOpenAI } from "@langchain/openai";
+import { ChatOpenAI, OpenAIEmbeddings } from "@langchain/openai";
+import { RedisVectorStore } from "@langchain/redis";
 import { z } from "zod";
 
-const MAX_FILE_SIZE = 5000000;
+const MAX_FILE_SIZE = 50000000;
 const ACCEPTED_FILE_TYPES = ["application/pdf"];
 
 export const appRouter = router({
@@ -82,22 +87,45 @@ Below you find the subject and text to summarize:
 
       return { questions: chainResult, answers: result };
     }),
-  chatPDF: publicProcedure
-    .input(
-      z
-        .any()
-        .refine((file) => file?.size <= MAX_FILE_SIZE, "File size is too large")
-        .refine(
-          (file) => ACCEPTED_FILE_TYPES.includes(file?.type),
-          "File type is not accepted",
-        ),
-    )
+  chatWithAI: publicProcedure
+    .input(z.object({ prompt: z.string(), key: z.string() }))
     .mutation(async (opts) => {
       const { input } = opts;
-      const llmChat = new ChatOpenAI({
-        temperature: 0.7,
+
+      const redisClient = createClient({
+        url: process.env.REDIS_URL ?? "redis://localhost:6379",
       });
-      const chatTemplate = ``;
+      await redisClient.connect();
+
+      const model = new ChatOpenAI();
+      const questionAnsweringPrompt = ChatPromptTemplate.fromMessages([
+        [
+          "system",
+          "Answer the user's questions based on the below context:\n\n{context}",
+        ],
+        ["human", "{input}"],
+      ]);
+
+      const combineDocsChain = await createStuffDocumentsChain({
+        llm: model,
+        prompt: questionAnsweringPrompt,
+      });
+
+      const vectorStore = new RedisVectorStore(new OpenAIEmbeddings(), {
+        redisClient,
+        indexName: input.key,
+      });
+
+      const chain = await createRetrievalChain({
+        retriever: vectorStore.asRetriever(),
+        combineDocsChain,
+      });
+
+      const result = await chain.invoke({ input: input.prompt });
+
+      await redisClient.disconnect();
+
+      return result;
     }),
 });
 

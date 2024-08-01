@@ -28,6 +28,14 @@ const ChatInput = ({ disabled, onSendPrompt }: ChatInputProps) => {
 
   useEffect(() => {
     if (textEl.current) {
+      textEl.current.style.height = "0px";
+      const scrollHeight = textEl.current.scrollHeight;
+      textEl.current.style.height = `${scrollHeight}px`;
+    }
+  }, [prompt, textEl]);
+
+  useEffect(() => {
+    if (textEl.current) {
       textEl.current.focus();
     }
   }, [disabled]);

@@ -24,7 +24,12 @@
       "label_loading": "Carregando...",
       "content_loading": "Verificando tipos de arquivo permitidos...",
       "content_uploading": "Enviando arquivo..."
-    }
+    },
+    "reset_button": "Novo chat",
+    "reset_title": "Você tem certeza que deseja iniciar um novo chat?",
+    "reset_description": "Essa ação irá apagar todo o histórico de conversa.",
+    "reset_confirm": "Sim, iniciar novo chat",
+    "reset_cancel": "Cancelar"
   },
   "QA": {
     "metadata-title": "Perguntas e Respostas",
