@@ -4,12 +4,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with
 ## Environment Variables
 
 Before starting the development server, you must configure the required
-environment variables in a `.env file`. Be sure to include the following keys:
+environment variables in a `.env` file. Be sure to include the following keys:
 
+```env
 OPENAI_API_KEY=your_openai_api_key_here
 UPLOADTHING_SECRET=your_uploadthing_secret_here
 UPLOADTHING_APP_ID=your_uploadthing_app_id_here
 REDIS_URL="redis://localhost:6379"
+```
+
 Replace the placeholder values with your actual
 API keys and URLs.
 
