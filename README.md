@@ -1,4 +1,17 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with
+[`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+## Environment Variables
+
+Before starting the development server, you must configure the required
+environment variables in a `.env file`. Be sure to include the following keys:
+
+OPENAI_API_KEY=your_openai_api_key_here
+UPLOADTHING_SECRET=your_uploadthing_secret_here
+UPLOADTHING_APP_ID=your_uploadthing_app_id_here
+REDIS_URL="redis://localhost:6379"
+Replace the placeholder values with your actual
+API keys and URLs.
 
 ## Getting Started
 
@@ -28,6 +41,8 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+All AI logic can be seen in `trpc/index.ts`.
 
 ## Deploy on Vercel
 
