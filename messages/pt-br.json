@@ -29,7 +29,19 @@
     "reset_title": "Você tem certeza que deseja iniciar um novo chat?",
     "reset_description": "Essa ação irá apagar todo o histórico de conversa.",
     "reset_confirm": "Sim, iniciar novo chat",
-    "reset_cancel": "Cancelar"
+    "reset_cancel": "Cancelar",
+    "toast": {
+      "success_title": "Chat reiniciado com sucesso",
+      "success_description": "O arquivo e o histórico de chat foram limpos, você pode começar um novo",
+      "error_title": "Erro ao reiniciar o chat",
+      "error_description": "Ocorreu um erro ao tentar reiniciar o chat, por favor tente novamente mais tarde",
+      "error_file_length_title": "Você só pode enviar um arquivo por vez",
+      "error_file_length_description": "Envie apenas um arquivo por vez para o chat",
+      "error_upload_file_title": "Erro ao enviar arquivo",
+      "error_upload_file_description": "Ocorreu um erro ao tentar enviar o arquivo, por favor tente novamente mais tarde",
+      "error_send_message_title": "Erro ao enviar mensagem",
+      "error_send_message_description": "Ocorreu um erro ao tentar enviar a mensagem, por favor tente novamente mais tarde"
+    }
   },
   "QA": {
     "metadata-title": "Perguntas e Respostas",
