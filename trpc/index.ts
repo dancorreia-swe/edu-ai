@@ -114,6 +114,9 @@ Below you find the subject and text to summarize:
       const vectorStore = new RedisVectorStore(new OpenAIEmbeddings(), {
         redisClient,
         indexName: input.key,
+        createIndexOptions: {
+          TEMPORARY: 2400,
+        },
       });
 
       const chain = await createRetrievalChain({

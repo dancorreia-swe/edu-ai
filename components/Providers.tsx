@@ -14,7 +14,7 @@ const Providers = ({ children }: PropsWithChildren) => {
         httpLink({
           url: "/api/trpc",
         }),
-      ],
+       ],
     }),
   );
 
