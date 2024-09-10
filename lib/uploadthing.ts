@@ -5,5 +5,5 @@ import {
   generateUploadDropzone,
 } from "@uploadthing/react";
 
-export const UploadButton = generateUploadButton<OurFileRouter>();
-export const UploadDropzone = generateUploadDropzone<OurFileRouter>();
+export const UploadButton = generateUploadButton<OurFileRouter | any>();
+export const UploadDropzone = generateUploadDropzone<OurFileRouter | any>();

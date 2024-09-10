@@ -124,37 +124,19 @@ const Features = () => {
                     id="tabs-with-card-1"
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-1"
-                  >
-                    <img
-                      className="rounded-xl shadow-xl shadow-gray-200 dark:shadow-gray-900/[.2]"
-                      src="https://images.unsplash.com/photo-1605629921711-2f6b00c6bbf4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
-                      alt="Image Description"
-                    />
-                  </div>
+                  ></div>
                   <div
                     id="tabs-with-card-2"
                     className="hidden"
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-2"
-                  >
-                    <img
-                      className="rounded-xl shadow-xl shadow-gray-200 dark:shadow-gray-900/[.2]"
-                      src="https://images.unsplash.com/photo-1665686306574-1ace09918530?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
-                      alt="Image Description"
-                    />
-                  </div>
+                  ></div>
                   <div
                     id="tabs-with-card-3"
                     className="hidden"
                     role="tabpanel"
                     aria-labelledby="tabs-with-card-item-3"
-                  >
-                    <img
-                      className="rounded-xl shadow-xl shadow-gray-200 dark:shadow-gray-900/[.2]"
-                      src="https://images.unsplash.com/photo-1598929213452-52d72f63e307?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&h=1220&q=80"
-                      alt="Image Description"
-                    />
-                  </div>
+                  ></div>
                 </div>
                 {/* End Tab Content */}
                 {/* SVG Element */}

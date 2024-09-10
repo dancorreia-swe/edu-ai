@@ -12,7 +12,7 @@ const ChatInput = ({ disabled, onSendPrompt }: ChatInputProps) => {
   const [prompt, setPrompt] = useState<string>("");
   const textEl = useRef<HTMLTextAreaElement>(null);
 
-  const handleTextKeyUp = (event: KeyboardEvent<HTMLTextAreaElement>) => {
+  const handleTextKeyUp = (event: any) => {
     if (event.code.toLowerCase() === "enter" && !event.shiftKey) {
       event.preventDefault();
       handleSendPrompt();
